@@ -1,10 +1,10 @@
+import React from "react";
 import { useContext, useReducer } from "react";
 import { StoreContext, actions } from "./store";
 import { Routes, Route, Link } from "react-router-dom";
 import GlobalStyles from "./components/GlobalStyles";
-import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import Contact from "./pages/Contact";
+import { publicRoutes } from "./routes";
+import DefaultLayout from "./components/Layout/DefaultLayout";
 
 function App() {
   return (
@@ -20,11 +20,34 @@ function App() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<Detail />} />
-          <Route path="/contact" element={<Contact />} />
+          {publicRoutes.map((route, index) => {
+            const Page = route.component;
+            let Layout = DefaultLayout;
+            if (route.layout) {
+              Layout = route.layout;
+            } else if (route.layout === null) {
+              Layout = React.Fragment;
+            }
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
         </Routes>
       </div>
     </GlobalStyles>
