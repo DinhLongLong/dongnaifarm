@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -17,6 +19,16 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 :root {
-  --test: #030303;
+  --primary-color: #09321e;
+  --primary-green: #49913f;
+  --secondary-green: #53a92c;
 }

@@ -1,0 +1,108 @@
+.wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.container {
+  position: absolute;
+  right: 0;
+  width: var(--container-width);
+  height: 100%;
+  background-color: #ffffff;
+  overflow-y: auto;
+  z-index: 3;
+  animation: 0.3s appearContainer linear;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-green);
+  padding: 3rem 4rem;
+  span {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}
+.notification-item {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem;
+  cursor: pointer;
+  transition: 0.1s linear;
+  &-header {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+    margin-bottom: 0.4rem;
+  }
+  &-content {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #787878;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &:hover {
+    background-color: #f4f4f4;
+  }
+}
+.separate {
+  width: 100%;
+  height: 0.1rem;
+  background-color: #f4f4f4;
+}
+.cancel-btn {
+  width: 4.2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #ffffff;
+  padding: 1rem;
+  border: 0.2rem solid;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s linear;
+  &:hover {
+    color: var(--primary-green);
+    background-color: #ffffff;
+  }
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: 0.3s fadeIn linear;
+}
+
+:root {
+  --container-width: 50rem;
+}
+
+// animation
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes appearContainer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

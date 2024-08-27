@@ -1,5 +1,7 @@
+import Banner from "./components/Banner";
+
 function Home() {
-  return <h2>Home Page</h2>;
+  return <Banner />;
 }
 
 export default Home;
