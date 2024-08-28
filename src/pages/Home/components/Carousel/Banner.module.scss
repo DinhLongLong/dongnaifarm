@@ -1,0 +1,122 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: var(--carousel-height);
+  z-index: 0;
+  overflow: hidden;
+}
+.banner-list {
+  display: flex;
+  transition: 0.3s linear;
+}
+.banner-item {
+  flex: 1 0 100%;
+  overflow: hidden;
+  &-img {
+    display: block;
+    height: var(--carousel-height);
+    width: 100%;
+    filter: brightness(60%);
+  }
+}
+.order-ads {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &-text1 {
+    font-size: 7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  &-text2 {
+    font-size: 7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #f3aa37;
+    margin-bottom: 3rem;
+  }
+  &-btn {
+    position: relative;
+    width: 20rem;
+    height: 6rem;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    &-left {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1.4rem;
+      width: calc(10rem + 1.5rem);
+      background-color: var(--primary-green);
+      transform: skewX(25deg);
+      transition: 0.2s linear;
+    }
+    &-right {
+      top: 0;
+      bottom: 0;
+      right: -1.4rem;
+      position: absolute;
+      width: calc(10rem + 1.5rem);
+      background-color: var(--primary-green);
+      transform: skewX(25deg);
+      transition: 0.2s linear;
+    }
+    &-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: #ffffff;
+      transition: 0.1s linear;
+    }
+    &:hover &-left {
+      width: 0;
+    }
+    &:hover &-right {
+      width: 0;
+    }
+    &:hover &-text {
+      color: var(--primary-green);
+    }
+  }
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #ffffff;
+  padding: 1.8rem;
+  width: 7rem;
+  text-align: center;
+  border-radius: 50%;
+  border: 0.2rem solid;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s linear;
+  &-left {
+    left: 5rem;
+  }
+  &-right {
+    right: 5rem;
+  }
+  &:hover {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+  }
+}
+
+:root {
+  --carousel-height: 70rem;
+}
